@@ -10,6 +10,7 @@ import "./App.css";
 import Experience from "./pages/Experience";
 
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function AppLayout() {
   const {pathname} = useLocation();
@@ -48,7 +49,7 @@ function AppLayout() {
           />
           <Route
             path="/contact"
-            element={<PagePlaceholder title="Contact" />}
+            element={<Contact title="Contact" />}
           />
           <Route
             path="*"
