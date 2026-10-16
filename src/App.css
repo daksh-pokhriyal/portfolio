@@ -857,3 +857,87 @@ button {
   }
 }
 
+
+/* GLOBAL BACKGROUND — visible on every route */
+
+.site-background {
+  position: fixed;
+  inset: -16px;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: url("/meadow-bg.png");
+  background-position: center 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter: blur(0);
+  opacity: 1;
+
+  transition:
+    filter 750ms ease,
+    opacity 750ms ease;
+
+  will-change: filter, opacity;
+}
+
+/* Soft white veil on internal pages */
+
+.site-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 750ms ease;
+}
+
+/* Blur the meadow everywhere except Home */
+
+.site-background--blurred {
+  filter: blur(1px);
+  opacity: 0.95;
+}
+
+.site-background--blurred::after {
+  background: rgba(255, 255, 255, 0.065);
+}
+
+/* Keep the actual page content above the background */
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* The Home page should not paint a second background */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Let the blurred background show through internal pages */
+
+.projects-page {
+  background: rgba(251, 252, 250, 0.7);
+}
+
+.inner-page {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-background,
+  .site-background::after {
+    transition: none;
+  }
+}
+.site-header {
+  position: absolute;
+  z-index: 10;
+}
+
