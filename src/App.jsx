@@ -9,6 +9,8 @@ import PagePlaceholder from "./pages/PagePlaceholder";
 import "./App.css";
 import Experience from "./pages/Experience";
 
+import About from "./pages/About";
+
 function AppLayout() {
   const {pathname} = useLocation();
   const isHome = pathname === "/";
@@ -37,12 +39,9 @@ function AppLayout() {
 
           <Route
             path="/about"
-            element={<PagePlaceholder title="About Me" />}
+            element={<About title="About Me" />}
           />
-          <Route
-            path="/skills"
-            element={<PagePlaceholder title="Skills" />}
-          />
+          
           <Route
             path="/education"
             element={<PagePlaceholder title="Education" />}
