@@ -19,8 +19,9 @@ function Home() {
 
           <a
             className="resume-button"
-            href="/resume.pdf"
-            download="Resume.pdf"
+              href="/resume.pdf"
+              target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               width="18"

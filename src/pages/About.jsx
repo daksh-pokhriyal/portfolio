@@ -56,9 +56,10 @@ function About() {
           </a>
 
           <a
-            className="about-link"
-            href="/resume.pdf"
-            download="Daksh-Resume.pdf"
+            className="resume-button"
+              href="/resume.pdf"
+              target="_blank"
+            rel="noopener noreferrer"
           >
             Download Resume <span aria-hidden="true">↓</span>
           </a>
