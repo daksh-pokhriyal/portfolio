@@ -878,7 +878,7 @@ button {
     filter 750ms ease,
     opacity 750ms ease;
 
-  will-change: filter, opacity;
+ 
 }
 
 /* Soft white veil on internal pages */
@@ -1703,6 +1703,69 @@ button {
     gap: 17px;
   }
 }
+
+
+
+
+/* =========================================
+   FINAL BACKGROUND BLUR SETTINGS
+   ========================================= */
+
+/* Home: keep the background sharp */
+.site-background {
+  filter: blur(0);
+  opacity: 1;
+
+  transition:
+    filter 300ms ease,
+    opacity 300ms ease;
+}
+
+/* All non-home pages: subtle background blur */
+.site-background--blurred {
+  filter: blur(2px);
+  opacity: 1;
+}
+
+/* Remove the white overlay */
+.site-background::after,
+.site-background--blurred::after {
+  background: transparent !important;
+}
+
+/* Keep page backgrounds transparent */
+.projects-page,
+.experience-page,
+.about-page,
+.contact-page,
+.inner-page {
+  background: transparent !important;
+}
+
+/* Avoid expensive backdrop blur on large panels */
+.tech-stack-section,
+.about-container,
+.contact-container {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .site-background,
+  .site-background::after {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
