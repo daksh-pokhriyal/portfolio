@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import PagePlaceholder from "./pages/PagePlaceholder";
 
 import "./App.css";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route
-          path="/projects"
-          element={<PagePlaceholder title="Projects" />}
-        />
+  path="/projects"
+  element={<Projects />}
+/>
 
         <Route
           path="/experience"
