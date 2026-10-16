@@ -3,9 +3,9 @@ import {useState} from "react";
 import {NavLink,Link} from "react-router-dom";
 
 const links = [
-  {label:"Overview",to:"/"},
+  {label:"Home",to:"/"},
   {label:"Projects",to:"/projects"},
-  {label:"Experience",to:"/experience"},
+  {label:"Skills",to:"/skills"},
   {label:"About",to:"/about"}
 ];
 
