@@ -41,10 +41,7 @@ function Home() {
             Download Resume
           </a>
 
-          <div className="scroll-hint">
-            <span></span>
-            Explore my portfolio
-          </div>
+          
         </div>
       </section>
     </main>

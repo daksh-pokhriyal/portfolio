@@ -20,7 +20,7 @@ function Navbar() {
           to="/"
           onClick={() => setMenuOpen(false)}
         >
-          Portfolio<span>.Dev</span>
+          DAKSH<span>Pokhriyal</span>
         </Link>
 
         <button
@@ -56,7 +56,7 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <span className="language-label">EN</span>
+          
           <Link
             className="nav-cta"
             to="/contact"
