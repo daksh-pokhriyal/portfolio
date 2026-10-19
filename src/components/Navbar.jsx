@@ -1,16 +1,16 @@
 
-import {useState} from "react";
-import {NavLink,Link} from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const links = [
-  {label:"Home",to:"/"},
-  {label:"Projects",to:"/projects"},
-  {label:"Skills",to:"/skills"},
-  {label:"About",to:"/about"}
+  { label: "Home", to: "/" },
+  { label: "Projects", to: "/projects" },
+  { label: "Skills", to: "/skills" },
+  { label: "About", to: "/about" }
 ];
 
-function Navbar() {
-  const [menuOpen,setMenuOpen] = useState(false);
+function Navbar({ darkMode, onToggleTheme }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="site-header">
@@ -45,7 +45,7 @@ function Navbar() {
               key={link.label}
               to={link.to}
               end={link.to === "/"}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               onClick={() => setMenuOpen(false)}
@@ -56,7 +56,20 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
-          
+
+
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+            aria-pressed={darkMode}
+            title={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+          >
+            {darkMode ? "☀" : "☾"}
+          </button>
+
+
           <Link
             className="nav-cta"
             to="/contact"

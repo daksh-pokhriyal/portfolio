@@ -1760,6 +1760,421 @@ button {
 
 
 
+/* =========================================
+   LIGHT / DARK THEME TOGGLE
+   ========================================= */
+
+/* App theme wrapper */
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  color: #111522;
+}
+
+.app-shell.dark-theme {
+  color: #f2f5fa;
+  color-scheme: dark;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(91, 142, 94, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: #25312a;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(-12deg);
+  border-color: #59c66b;
+  background: #eff9f0;
+}
+
+.dark-theme .theme-toggle {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(10, 15, 27, 0.8);
+  color: #ffe49a;
+}
+
+.dark-theme .theme-toggle:hover {
+  background: #202c40;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #59c66b;
+  outline-offset: 3px;
+}
+
+/* Night image fades over the daytime image */
+.site-background {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.site-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/meadow-bg-night.png");
+  background-position: center 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+.app-shell.dark-theme .site-background::before {
+  opacity: 1;
+}
+
+/* NAVBAR TEXT */
+
+.app-shell.dark-theme .brand {
+  color: #f7f8fc;
+}
+
+.app-shell.dark-theme .brand span {
+  color: #abb5c5;
+}
+
+.app-shell.dark-theme .nav-link {
+  color: #e0e5ee;
+}
+
+.app-shell.dark-theme .nav-link:hover,
+.app-shell.dark-theme .nav-link.active {
+  color: #70dd87;
+}
+
+.app-shell.dark-theme .language-label {
+  color: #f2f5fa;
+}
+
+/* HOMEPAGE */
+
+.app-shell.dark-theme .hero-title,
+.app-shell.dark-theme .inner-page-content h1 {
+  color: #f6f7fb;
+}
+
+.app-shell.dark-theme .hero-subtitle,
+.app-shell.dark-theme .inner-page-content > p:not(.hero-eyebrow) {
+  color: #d0d7e3;
+}
+
+.app-shell.dark-theme .scroll-hint {
+  color: #d0d7e3;
+}
+
+.app-shell.dark-theme .scroll-hint span {
+  background: #a9b8cf;
+}
+
+/* PROJECTS PAGE */
+
+.app-shell.dark-theme .projects-intro h1,
+.app-shell.dark-theme .project-card-heading h2 {
+  color: #f5f7fc;
+}
+
+.app-shell.dark-theme .projects-description,
+.app-shell.dark-theme .project-summary,
+.app-shell.dark-theme .project-details-description p,
+.app-shell.dark-theme .project-details-highlights ul {
+  color: #c5cede;
+}
+
+.app-shell.dark-theme .projects-count,
+.app-shell.dark-theme .projects-footer-note {
+  color: #aab4c4;
+}
+
+.app-shell.dark-theme .projects-count span:first-child {
+  color: #f5f7fc;
+}
+
+.app-shell.dark-theme .project-card {
+  border-color: rgba(200, 216, 240, 0.15);
+  background: rgba(9, 16, 29, 0.82);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.app-shell.dark-theme .project-card:hover,
+.app-shell.dark-theme .project-card-expanded {
+  border-color: rgba(89, 198, 107, 0.55);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.app-shell.dark-theme .project-card-details {
+  border-top-color: rgba(200, 216, 240, 0.15);
+}
+
+.app-shell.dark-theme .project-tag {
+  border-color: rgba(200, 216, 240, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  color: #dce4f0;
+}
+
+.app-shell.dark-theme .project-card-links a {
+  border-color: rgba(200, 216, 240, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f0f4fa;
+}
+
+.app-shell.dark-theme .project-card-links a:hover {
+  border-color: #59c66b;
+  background: rgba(89, 198, 107, 0.12);
+}
+
+/* SKILLS PAGE */
+
+.app-shell.dark-theme .experience-intro h1 {
+  color: #f5f7fc;
+}
+
+.app-shell.dark-theme .experience-intro > p:last-child {
+  color: #d0d7e3;
+}
+
+.app-shell.dark-theme .tech-stack-section {
+  border-color: rgba(200, 216, 240, 0.16);
+  background: rgba(8, 14, 26, 0.76);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.app-shell.dark-theme .tech-stack-heading h2 {
+  color: #edf1f8;
+}
+
+.app-shell.dark-theme .tech-stack-heading span {
+  background: rgba(200, 216, 240, 0.2);
+}
+
+.app-shell.dark-theme .tech-stack-grid {
+  border-color: rgba(200, 216, 240, 0.18);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.app-shell.dark-theme .tech-stack-category:nth-child(-n+3),
+.app-shell.dark-theme .tech-stack-category:nth-child(1),
+.app-shell.dark-theme .tech-stack-category:nth-child(2),
+.app-shell.dark-theme .tech-stack-category:nth-child(4) {
+  border-color: rgba(200, 216, 240, 0.16);
+}
+
+.app-shell.dark-theme .tech-stack-tag {
+  border-color: rgba(200, 216, 240, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: #e0e6f0;
+}
+
+.app-shell.dark-theme .tech-stack-tag:hover {
+  border-color: #59c66b;
+  background: rgba(89, 198, 107, 0.12);
+  color: #91f3a4;
+}
+
+/* ABOUT PAGE */
+
+.app-shell.dark-theme .about-container,
+.app-shell.dark-theme .contact-container {
+  border-color: rgba(200, 216, 240, 0.17);
+  background: rgba(9, 16, 29, 0.82);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.14);
+}
+
+.app-shell.dark-theme .about-title,
+.app-shell.dark-theme .contact-title {
+  color: #f5f7fc;
+}
+
+.app-shell.dark-theme .about-content p,
+.app-shell.dark-theme .contact-description {
+  color: #cbd4e1;
+}
+
+.app-shell.dark-theme .about-divider {
+  background: rgba(200, 216, 240, 0.18);
+}
+
+.app-shell.dark-theme .about-explore > span,
+.app-shell.dark-theme .contact-socials > p {
+  color: #aab5c5;
+}
+
+.app-shell.dark-theme .about-link {
+  border-color: rgba(200, 216, 240, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #edf2f9;
+}
+
+.app-shell.dark-theme .about-link-primary {
+  border-color: #59c66b;
+  background: #59c66b;
+  color: #ffffff;
+}
+
+.app-shell.dark-theme .about-link:hover {
+  border-color: #59c66b;
+  background: rgba(89, 198, 107, 0.15);
+}
+
+.app-shell.dark-theme .about-link-primary:hover {
+  background: #43b657;
+}
+
+/* CONTACT PAGE */
+
+.app-shell.dark-theme .contact-form {
+  border-color: rgba(200, 216, 240, 0.17);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.app-shell.dark-theme .contact-form-heading h2,
+.app-shell.dark-theme .contact-field label {
+  color: #f2f5fa;
+}
+
+.app-shell.dark-theme .contact-form-heading p,
+.app-shell.dark-theme .contact-form-note {
+  color: #aeb9c9;
+}
+
+.app-shell.dark-theme .contact-email-link {
+  border-color: rgba(200, 216, 240, 0.18);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.app-shell.dark-theme .contact-email-link strong {
+  color: #edf2f9;
+}
+
+.app-shell.dark-theme .contact-email-link small {
+  color: #aeb9c9;
+}
+
+.app-shell.dark-theme .contact-icon {
+  background: rgba(89, 198, 107, 0.14);
+  color: #83e796;
+}
+
+.app-shell.dark-theme .contact-field input,
+.app-shell.dark-theme .contact-field textarea {
+  border-color: rgba(200, 216, 240, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  color: #f5f7fc;
+  color-scheme: dark;
+}
+
+.app-shell.dark-theme .contact-field input::placeholder,
+.app-shell.dark-theme .contact-field textarea::placeholder {
+  color: #929eb0;
+}
+
+.app-shell.dark-theme .contact-field input:focus,
+.app-shell.dark-theme .contact-field textarea:focus {
+  border-color: #59c66b;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .site-background::before,
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+
+/* FORCE NAVBAR DARK THEME */
+
+.app-shell.dark-theme .site-header {
+  background: rgba(3, 7, 18, 0.82) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: background 300ms ease;
+}
+
+/* Logo and navigation text */
+.app-shell.dark-theme .brand {
+  color: #ffffff !important;
+}
+
+.app-shell.dark-theme .brand span {
+  color: #b8c5d8 !important;
+}
+
+.app-shell.dark-theme .nav-link,
+.app-shell.dark-theme .language-label {
+  color: #e7edf7 !important;
+}
+
+.app-shell.dark-theme .nav-link:hover,
+.app-shell.dark-theme .nav-link.active {
+  color: #78e890 !important;
+}
+
+/* Moon/sun toggle */
+.app-shell.dark-theme .theme-toggle {
+  background: #172238 !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffe49a !important;
+}
+
+/* Keep the green Connect button unchanged */
+.app-shell.dark-theme .nav-cta {
+  background: #59c66b;
+  color: #ffffff;
+}
+
+/* Mobile dropdown */
+@media (max-width: 900px) {
+  .app-shell.dark-theme .nav-links {
+    background: #0b1220 !important;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .app-shell.dark-theme .menu-toggle {
+    background: #172238 !important;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .app-shell.dark-theme .menu-toggle span {
+    background: #ffffff !important;
+  }
+}
+
+/* PURE BLACK NAVBAR IN DARK MODE */
+.app-shell.dark-theme .site-header {
+  background: #000000 !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+
+
+
+
+
 
 
 
