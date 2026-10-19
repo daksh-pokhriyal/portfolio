@@ -2169,14 +2169,29 @@ button {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* FIX THE WHITE GAP BELOW THE NAVBAR ON OTHER PAGES */
-
-.site-background--blurred {
-  background-position: center top !important;
+/* Keep the meadow aligned across every page */
+.site-background,
+.site-background::before {
+  background-position: center 80px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.site-background--blurred::before {
-  background-position: center top !important;
+/* Prevent white gaps in dark mode */
+.app-shell.dark-theme {
+  background-color: #000000;
+}
+
+.app-shell.dark-theme .site-background {
+  background-color: #000000 !important;
+}
+
+/* Keep the same meadow alignment on every page */
+.site-background,
+.site-background::before {
+  background-position: center 80px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
