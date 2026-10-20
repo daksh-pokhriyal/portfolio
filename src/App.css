@@ -2202,16 +2202,141 @@ button {
 
 
 
+/* =========================================
+   FAST LIGHT / DARK THEME TRANSITIONS
+   ========================================= */
+
+/* Background */
+.site-background,
+.site-background::before {
+  transition:
+    opacity 250ms ease,
+    filter 250ms ease;
+}
+
+/* Navbar */
+.site-header,
+.app-shell.dark-theme .site-header {
+  transition:
+    background-color 250ms ease,
+    background 250ms ease,
+    box-shadow 250ms ease;
+}
+
+/* Main cards and panels */
+.project-card,
+.tech-stack-section,
+.tech-stack-grid,
+.about-container,
+.contact-container,
+.contact-form {
+  transition:
+    background-color 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    color 250ms ease;
+}
+
+/* Technology tags and links */
+.tech-stack-tag,
+.project-tag,
+.about-link,
+.contact-email-link {
+  transition:
+    background-color 250ms ease,
+    background 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease,
+    box-shadow 250ms ease,
+    transform 180ms ease;
+}
+
+/* Form inputs */
+.contact-field input,
+.contact-field textarea {
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Text and navbar links */
+.projects-intro h1,
+.projects-description,
+.project-card-heading h2,
+.project-summary,
+.experience-intro h1,
+.experience-intro > p:last-child,
+.about-title,
+.about-content p,
+.contact-title,
+.contact-description,
+.contact-form-heading h2,
+.contact-form-heading p,
+.nav-link,
+.brand,
+.brand span {
+  transition: color 250ms ease;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .site-background,
+  .site-background::before,
+  .site-header,
+  .project-card,
+  .tech-stack-section,
+  .tech-stack-grid,
+  .about-container,
+  .contact-container,
+  .contact-form,
+  .tech-stack-tag,
+  .project-tag,
+  .about-link,
+  .contact-email-link {
+    transition: none !important;
+  }
+}
 
 
+/* =========================================
+   HOME + NAVBAR — SYNCHRONIZED TRANSITION
+   ========================================= */
 
+/* Day/night background crossfade on every page */
+.site-background,
+.site-background::before {
+  transition:
+    opacity 250ms ease,
+    filter 250ms ease !important;
+}
 
+/* Smooth navbar color change in both directions */
+.site-header,
+.app-shell.dark-theme .site-header {
+  transition:
+    background-color 250ms ease,
+    background 250ms ease,
+    box-shadow 250ms ease !important;
+}
 
+/* Smooth moon/sun toggle */
+.theme-toggle {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 180ms ease !important;
+}
 
-
-
-
-
-
-
-
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .site-background,
+  .site-background::before,
+  .site-header,
+  .theme-toggle {
+    transition: none !important;
+  }
+}
