@@ -2105,10 +2105,16 @@ button {
 
 /* FORCE NAVBAR DARK THEME */
 
+/* Base navbar — light theme */
+.site-header {
+  background-color: #ffffff;
+  transition: background-color 600ms ease;
+}
+
+/* Dark theme */
 .app-shell.dark-theme .site-header {
-  background: rgba(3, 7, 18, 0.82) !important;
+  background-color: #000000 !important;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: background 300ms ease;
 }
 
 /* Logo and navigation text */
