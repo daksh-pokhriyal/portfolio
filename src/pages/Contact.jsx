@@ -1,6 +1,6 @@
 
 function Contact() {
-  const contactEmail = "YOUR_EMAIL@example.com";
+  const contactEmail = "itisdakshpokhriyal@gmail.com";
 
   function handleSubmit(event) {
   event.preventDefault();
